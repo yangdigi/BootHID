@@ -1,0 +1,16 @@
+# Name: Makefile.windows_boothid
+# Project: Automator
+# Author: Hermann Seib
+# Creation Date: 2014-11-12
+
+
+# You may use this file with
+#   make -f Makefile.windows_boothid
+# on Windows with MinGW instead of editing the main Makefile.
+
+include Makefile
+
+# Hijack USBFLAGS for Bootloader size override
+USBFLAGS=	-DBOOTLOAD_SIZE=1024
+USBLIBS=    -lhid -lusb -lsetupapi
+EXE_SUFFIX= .exe
